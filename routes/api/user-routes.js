@@ -59,7 +59,6 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'No user with that email address!' });
             return;
         }
-        //res.json({ user: dbUserData });
 
         const validPassword = dbUserData.checkPassword(req.body.password);
         if (!validPassword) {
